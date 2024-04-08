@@ -65,51 +65,15 @@ export default {
   data() {
     return {
       text: '',
-      options: null,
-      filteredOptions: [],
-      search: null,
       fabGithub: fabGithub
     }
   },
   mounted() {
-    this.loadData();
+    
   },
   methods: {
-    loadData() {
-      // Simulating data loading
-      const stringOptions = [
-        'quasarframework/quasar',
-        'quasarframework/quasar-awesome'
-      ];
-      setTimeout(() => {
-        this.options = stringOptions;
-        this.search.filter('');
-      }, 2000);
-    },
-    filter(val, update) {
-      if (this.options === null) {
-        this.loadData();
-        update();
-        return;
-      }
-
-      if (val === '') {
-        update(() => {
-          this.filteredOptions = this.options.map(op => ({ label: op }));
-        });
-        return;
-      }
-
-      update(() => {
-        this.filteredOptions = [
-          { label: val, type: 'In this repository' },
-          { label: val, type: 'All GitHub' },
-          ...this.options
-            .filter(op => op.toLowerCase().includes(val.toLowerCase()))
-            .map(op => ({ label: op }))
-        ];
-      });
-    }
+    
+   
   }
 }
 </script>
