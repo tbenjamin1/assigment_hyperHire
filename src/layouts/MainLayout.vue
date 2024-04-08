@@ -1,7 +1,7 @@
 <template>
   <q-layout>
     <q-header unelevated class="text-white bg-white" height-hint="61.59">
-      <q-toolbar class="q-py-sm q-px-md justify-around" style="background-image: url('/icons/gradient.png');width:98%">
+      <q-toolbar class=" q-px-md justify-around" style="background-image: url('/icons/gradient.png');width:98%">
         <q-btn round dense flat :ripple="false" size="19px" color="white" class="q-mr-sm" no-caps>
           <img src="/icons/hyperhire.png" alt="Drop Image" class="drop-icon">
           <span class="q-px-sm">hyperhire</span>
@@ -81,5 +81,13 @@ export default {
 <style scoped>
 .q-layout {
   min-height: unset !important;
+}
+@media (max-width: 600px) {
+   .q-page-container{
+    width: 100% !important;
+   }
+   .q-toolbar{
+  width: 100% !important;
+   }
 }
 </style>

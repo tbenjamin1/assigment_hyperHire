@@ -181,4 +181,28 @@ export default {
     border-radius: 5px;
     padding: 2px 5px;
     margin: 0px 2px;
-}</style>
+}
+@media (max-width: 500px) {
+ 
+   .swiper-carousel {
+    width: 100%;
+   }
+   .swiper-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px !important;
+    height: 300px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #EDFCFF;
+
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+}
+.swiper-wrapper {
+    left: -16% !important;
+}
+}
+</style>
