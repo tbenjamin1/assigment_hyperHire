@@ -44,6 +44,7 @@ export default {
 </script>
 
 <style  scoped>
+
 .swiper_slider .swiper-slide {
     display: flex;
     align-items: center;

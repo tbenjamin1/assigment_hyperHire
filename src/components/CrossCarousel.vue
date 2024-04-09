@@ -3,12 +3,10 @@
         <swiper class="swiper-carousel" :options="swiperOption">
             <swiper-slide v-for="index in 3" :key="index">
                 <div class="container">
-                    <!-- <q-avatar round size="50px"><img src="https://cdn.quasar.dev/img/avatar.png" class="q-my-sm" alt=""></q-avatar> -->
                     <q-item clickable v-ripple>
                         <q-item-section side>
                             <q-avatar round size="80px">
                                 <img src="https://cdn.quasar.dev/img/avatar.png" />
-                                <!-- <q-badge floating  icon="signal_wifi_off" color="teal"></q-badge> -->
                                 <q-badge floating color="teal">
                                     <q-icon name="flag" />
                                 </q-badge>

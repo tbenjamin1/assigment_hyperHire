@@ -1,34 +1,52 @@
 <template>
   <q-page class="q-px-xl">
     <div class="row main-container">
-      <div class="fade-in-delay left-container" style="">
-        <q-chat-message class="left-message" sent>
+      <div
+        class="fade-in-delay left-container"
+        style=""
+      >
+        <q-chat-message
+          class="left-message"
+          sent
+        >
           <div class="left_message">풀타임, 파트타임</div>
         </q-chat-message>
-        <div class="q-pb-md column-container" color="white">
-          <div class="main-title q-py-sm">최고의 실력을 가진 <br>
+        <div
+          class="q-pb-md column-container"
+          color="white"
+        >
+          <div class="main-title q-py-sm fade-in-up">최고의 실력을 가진 <br>
             외국인 인재를 찾고 계신가요?</div>
-          <div class="sub-title">
+
+          <div class="sub-title fade-in-up">
             법률 및 인사관리 부담없이 <br>
             1주일 이내에 원격으로 채용해보세요
           </div>
-          <div v-if="$q.screen.gt.xs" class="content q-py-sm">
+
+          <div
+            v-if="$q.screen.gt.xs"
+            class="content q-py-sm"
+          >
             개발자가 필요하신가요?
           </div>
-          <div class="row q-my-lg " v-if="$q.screen.gt.xs">
-            <div class="sub-content q-py-sm">
+          <div
+            class="row q-my-lg fade-in "
+            v-if="$q.screen.gt.xs"
+           
+          >
+            <div class="sub-content q-py-sm fade-in-one">
               <span>평균 월 120만원</span>
               <div>
                 임금을 해당 국가를 <br> 기준으로 계산합니다
               </div>
             </div>
-            <div class="q-mx-lg  q-py-sm sub-content">
+            <div class="q-mx-lg  q-py-sm sub-content fade-in-one ">
               <span>최대 3회 인력교체</span>
               <div>
                 막상 채용해보니 맞지 <br> 않아도 걱정하지 마세요
               </div>
             </div>
-            <div class="sub-content q-py-sm">
+            <div class="sub-content q-py-sm fade-in-one">
               <span>평균 3일, 최대 10일</span>
               <div>
                 급하게 사람이 필요한 <br> 경우에도 빠른 채용이 <br> 가능합니다
@@ -39,9 +57,16 @@
       </div>
       <div class="fade-in-delay right-container">
         <div style="">
-          <q-chat-message class="right-message q-mb-lg" sent>
+          <q-chat-message
+            class="right-message q-mb-lg"
+            sent
+          >
             <div class="row items-center">
-              <img src="/icons/usd.png" alt="Image" class="ussd-icon">
+              <img
+                src="/icons/usd.png"
+                alt="Image"
+                class="ussd-icon"
+              >
               <span class="right_message">월 <strong>100</strong> 만원</span>
             </div>
           </q-chat-message>
@@ -53,38 +78,39 @@
 
     </div>
 
-    <div class="row main-container q-my-sm">
-      <CardSlider :sliderItems="sliderItems" v-if="$q.screen.gt.xs" />
+    <div class="row main-container q-my-sm fade-in-animation">
+      <CardSlider
+        :sliderItems="sliderItems"
+        v-if="$q.screen.gt.xs"
+ 
+      />
 
     </div>
   </q-page>
 </template>
 
 <script>
-import { ref } from 'vue';
-import CardSlider from "../components/CardSlider.vue"
-import Carousel from "../components/CrossCarousel.vue"
-
+import { ref } from "vue";
+import CardSlider from "../components/CardSlider.vue";
+import Carousel from "../components/CrossCarousel.vue";
 
 export default {
   components: {
     CardSlider,
-    Carousel
+    Carousel,
   },
-  setup() {
-    // Define an array of objects containing image source and title
-
-    const sliderItems = ref([
-      { src: '/icons/personview.png', title: ' 해외 개발자 원격 채용' },
-      { src: '/icons/image-icon.png', title: '외국인 원격 채용 (비개발)', },
-      { src: '/icons/circle.png', title: '한국어 가능 외국인 채용' },
-      { src: '/icons/cube.png', title: '해외 개발자 활용 서비스' }
-      // Add more items as needed
-    ]);
+  data() {
     return {
-      sliderItems
+     
+       sliderItems :[
+        { src: "/icons/personview.png", title: " 해외 개발자 원격 채용" },
+        { src: "/icons/image-icon.png", title: "외국인 원격 채용 (비개발)" },
+        { src: "/icons/circle.png", title: "한국어 가능 외국인 채용" },
+        { src: "/icons/cube.png", title: "해외 개발자 활용 서비스" },
+        // Add more items as needed
+      ],
     };
-  }
+  }, 
 };
 </script>
 <style>
@@ -92,7 +118,6 @@ export default {
   display: flex;
   justify-content: flex-start;
   margin-left: 155px;
-
 }
 
 .left-container {
@@ -108,7 +133,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+/* FadeIn after title and subtitle shown(delay 300ms) */
 .fade-in-delay {
   animation: fadeIn 0.3s 300ms forwards;
 }
@@ -121,6 +146,51 @@ export default {
   to {
     opacity: 1;
   }
+}
+/* FadeInUp(500ms) */
+.fade-in-up {
+    animation-name: fadeInUp;
+    animation-duration: 500ms;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* fadeIn(500ms)*/
+.fade-in-animation {
+  animation-name: fade-in;
+  animation-duration: 500ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* fade-in-one-animation */
+.fade-in-one {
+    opacity: 0;
+    animation: fade-in-one-animation 500ms ease-in-out forwards;
+}
+
+@keyframes fade-in-one-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .column-container {
@@ -153,20 +223,17 @@ export default {
 }
 
 .right_message {
-  color: #00C696;
+  color: #00c696;
 }
 
 .right-message .q-message-text:last-child {
   min-height: unset;
-
 }
 
 .left-message .q-message-text:last-child {
   min-height: unset;
   padding: 8px 10px;
 }
-
-
 
 .q-message-text {
   padding: 2px 10px;
@@ -183,7 +250,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #40E2E8;
+  color: #40e2e8;
 }
 
 .main-title {
@@ -213,39 +280,37 @@ export default {
 }
 
 @media (max-width: 600px) {
- 
-.left_message .q-message-container {
-  display: flex;
-  justify-content: flex-end !important;
-  align-items: center;
-}
-.left_message {
-  display: flex;
-   justify-content: flex-end !important;
-  align-items: center;
-  color: #40E2E8;
-}
-  .main-container {
+  .left_message .q-message-container {
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: center;
+  }
 
+  .left_message {
+    display: flex;
+    justify-content: flex-end !important;
+    align-items: center;
+    color: #40e2e8;
+  }
+
+  .main-container {
     margin-left: unset;
     display: flex;
     flex-direction: column;
-
   }
+
   .left-container {
-  width: 100%;
-}
+    width: 100%;
+  }
 
-.right-container {
-  width: 100%;
-}
-
+  .right-container {
+    width: 100%;
+  }
 }
 
 @media (max-width: 320px) {
   .main-container {
-
     margin-left: unset;
-
   }
-}</style>
+}
+</style>
