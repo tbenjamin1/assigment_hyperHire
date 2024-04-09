@@ -47,4 +47,11 @@ export default {
     justify-items: center;
     align-items: center;
 }
+@media (max-width: 600px) {
+  .my-card {
+    
+    margin: 10px;
+    width: 44% !important;
+  }
+}
 </style>
