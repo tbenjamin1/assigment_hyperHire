@@ -90,6 +90,8 @@ export default {
 
   .q-toolbar {
     width: 100% !important;
+    display: flex;
+    justify-content: flex-start;
   }
 }
 </style>
