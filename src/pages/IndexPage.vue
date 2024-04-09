@@ -1,20 +1,12 @@
 <template>
   <q-page class="q-px-xl">
     <div class="row main-container">
-      <div
-        class="fade-in-delay left-container"
-        style=""
-      >
-        <q-chat-message
-          class="left-message"
-          sent
-        >
-          <div class="left_message">풀타임, 파트타임</div>
-        </q-chat-message>
-        <div
-          class="q-pb-md column-container"
-          color="white"
-        >
+      <div class="fade-in-delay left-container" style="">
+        <q-chat-message class="left-message" sent >
+      <div :class="{ 'bg-color-small-screen': $q.screen.lt.sm }" class="left_message">풀타임, 파트타임</div>
+  </q-chat-message>
+
+        <div class="q-pb-md column-container" color="white">
           <div class="main-title q-py-sm fade-in-up">최고의 실력을 가진 <br>
             외국인 인재를 찾고 계신가요?</div>
 
@@ -23,17 +15,10 @@
             1주일 이내에 원격으로 채용해보세요
           </div>
 
-          <div
-            v-if="$q.screen.gt.xs"
-            class="content q-py-sm"
-          >
+          <div v-if="$q.screen.gt.xs" class="content q-py-sm">
             개발자가 필요하신가요?
           </div>
-          <div
-            class="row q-my-lg fade-in "
-            v-if="$q.screen.gt.xs"
-           
-          >
+          <div class="row q-my-lg fade-in " v-if="$q.screen.gt.xs">
             <div class="sub-content q-py-sm fade-in-one">
               <span>평균 월 120만원</span>
               <div>
@@ -57,16 +42,9 @@
       </div>
       <div class="fade-in-delay right-container">
         <div style="">
-          <q-chat-message
-            class="right-message q-mb-lg"
-            sent
-          >
+          <q-chat-message class="right-message q-mb-lg" sent>
             <div class="row items-center">
-              <img
-                src="/icons/usd.png"
-                alt="Image"
-                class="ussd-icon"
-              >
+              <img src="/icons/usd.png" alt="Image" class="ussd-icon">
               <span class="right_message">월 <strong>100</strong> 만원</span>
             </div>
           </q-chat-message>
@@ -78,12 +56,25 @@
 
     </div>
 
-    <div class="row main-container q-my-sm fade-in-animation">
-      <CardSlider
-        :sliderItems="sliderItems"
-        v-if="$q.screen.gt.xs"
- 
-      />
+    <div class="row main-container q-my-sm fade-in-animation ">
+      <div class="q-my-lg" v-if="$q.screen.lt.sm">
+        <div class="row" >
+          <div class="checked-box" > <img src="/icons/Checkbox.png" alt="Image" class="checked-icon"> 한국어 능력 </div>
+          <div class="checked-box" >
+            <img src="/icons/Checkbox.png" alt="Image" class="checked-icon"> 업무 수행 능력
+          </div>
+        </div>
+        <div class="row q-my-sm" >
+            <div class="checked-box" > <img src="/icons/Checkbox.png" alt="Image" class="checked-icon"> 한국어 능력 </div>
+            <div class="checked-box" >
+              <img src="/icons/Checkbox.png" alt="Image" class="checked-icon"> 업무 수행 능력
+            </div>
+          </div>
+        <div class="quick-link-check q-py-sm">
+          개발자가 필요하신가요?
+        </div>
+      </div>
+      <CardSlider :sliderItems="sliderItems" v-if="$q.screen.gt.xs" />
 
     </div>
   </q-page>
@@ -101,8 +92,8 @@ export default {
   },
   data() {
     return {
-     
-       sliderItems :[
+
+      sliderItems: [
         { src: "/icons/personview.png", title: " 해외 개발자 원격 채용" },
         { src: "/icons/image-icon.png", title: "외국인 원격 채용 (비개발)" },
         { src: "/icons/circle.png", title: "한국어 가능 외국인 채용" },
@@ -110,7 +101,7 @@ export default {
         // Add more items as needed
       ],
     };
-  }, 
+  },
 };
 </script>
 <style>
@@ -119,6 +110,8 @@ export default {
   justify-content: flex-start;
   margin-left: 155px;
 }
+
+
 
 .left-container {
   width: 40%;
@@ -133,6 +126,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 /* FadeIn after title and subtitle shown(delay 300ms) */
 .fade-in-delay {
   animation: fadeIn 0.3s 300ms forwards;
@@ -147,21 +141,23 @@ export default {
     opacity: 1;
   }
 }
+
 /* FadeInUp(500ms) */
 .fade-in-up {
-    animation-name: fadeInUp;
-    animation-duration: 500ms;
+  animation-name: fadeInUp;
+  animation-duration: 500ms;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* fadeIn(500ms)*/
@@ -174,23 +170,26 @@ export default {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
+
 /* fade-in-one-animation */
 .fade-in-one {
-    opacity: 0;
-    animation: fade-in-one-animation 500ms ease-in-out forwards;
+  opacity: 0;
+  animation: fade-in-one-animation 500ms ease-in-out forwards;
 }
 
 @keyframes fade-in-one-animation {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .column-container {
@@ -278,7 +277,20 @@ export default {
   padding-right: unset;
   min-height: unset !important;
 }
-
+.checked-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.checked-icon{
+  margin: 0px 10px;
+}
+.quick-link-check{
+  margin: 0px 10px;
+  text-decoration: underline;
+  color: #FBFF23;
+}
 @media (max-width: 600px) {
   .left_message .q-message-container {
     display: flex;
@@ -290,9 +302,12 @@ export default {
     display: flex;
     justify-content: flex-end !important;
     align-items: center;
-    color: #40e2e8;
+    color: white;
   }
-
+.left-message .q-message-text:last-child {
+background-color: #8BC4FF;
+color: white;
+}
   .main-container {
     margin-left: unset;
     display: flex;
@@ -306,6 +321,17 @@ export default {
   .right-container {
     width: 100%;
   }
+  .main-title {
+  font-weight: 600;
+  font-size: 25px;
+   padding: 0px 20px;
+}
+
+.sub-title {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+}
 }
 
 @media (max-width: 320px) {
