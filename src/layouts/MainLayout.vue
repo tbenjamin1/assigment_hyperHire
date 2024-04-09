@@ -69,11 +69,11 @@ export default {
     }
   },
   mounted() {
-    
+
   },
   methods: {
-    
-   
+
+
   }
 }
 </script>
@@ -82,12 +82,14 @@ export default {
 .q-layout {
   min-height: unset !important;
 }
+
 @media (max-width: 600px) {
-   .q-page-container{
+  .q-page-container {
     width: 100% !important;
-   }
-   .q-toolbar{
-  width: 100% !important;
-   }
+  }
+
+  .q-toolbar {
+    width: 100% !important;
+  }
 }
 </style>
